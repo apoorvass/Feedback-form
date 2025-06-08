@@ -19,7 +19,7 @@ function App() {
 
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/feedback");
+      const res = await axios.get("https://feedback-form-backend-1.onrender.com/feedback");
       setFeedbacks(res.data);
     } catch (err) {
       console.error(err);
@@ -49,7 +49,7 @@ function App() {
     if (!validate()) return;
 
     try {
-      await axios.post("http://localhost:5000/feedback", formData);
+      await axios.post("https://feedback-form-backend-1.onrender.com/feedback", formData);
       setSuccessMessage("Thank you for your feedback!");
       setFormData({ name: "", email: "", message: "" });
       fetchFeedbacks();
